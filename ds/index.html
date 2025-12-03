@@ -181,6 +181,10 @@
           <div id="videoLoader" class="video-loader">
             <div class="loader-spinner"></div>
             <p>Loading video...</p>
+            <div class="progress-bar-container">
+              <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p id="progressText">0%</p>
           </div>
           <video
             id="mainVideo"
@@ -434,12 +438,27 @@ Below While Stocks Last!</h1>
 </div>
     
     <script>
-      // Video Preloader
+      // Video Preloader with Progress
       const video = document.getElementById("mainVideo");
       const videoLoader = document.getElementById("videoLoader");
+      const progressBar = document.getElementById("progressBar");
+      const progressText = document.getElementById("progressText");
 
       // Show loader initially
       videoLoader.style.display = "flex";
+
+      // Track loading progress
+      video.addEventListener("progress", () => {
+        if (video.buffered.length > 0) {
+          const bufferedEnd = video.buffered.end(video.buffered.length - 1);
+          const duration = video.duration;
+          if (duration > 0) {
+            const percentLoaded = (bufferedEnd / duration) * 100;
+            progressBar.style.width = percentLoaded + "%";
+            progressText.textContent = Math.round(percentLoaded) + "%";
+          }
+        }
+      });
 
       // Hide loader when video is ready to play
       video.addEventListener("canplaythrough", () => {
