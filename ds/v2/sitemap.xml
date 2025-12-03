@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Main Landing Page -->
+  <url>
+    <loc>https://pillowpotion.com/</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Cognigen Plus Product Page -->
+  <url>
+    <loc>https://pillowpotion.com/tsl2/</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+
+    <!-- Product Images -->
+    <image:image>
+      <image:loc>https://pillowpotion.com/offers/2x_cognigen.webp</image:loc>
+      <image:title>Cognigen Plus 2 Bottle Package</image:title>
+      <image:caption>Natural brain health support supplement - 2 bottle package</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://pillowpotion.com/offers/4x_cognigen.webp</image:loc>
+      <image:title>Cognigen Plus 4 Bottle Package - Best Value</image:title>
+      <image:caption>Natural brain health support supplement - 4 bottle package with maximum savings</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://pillowpotion.com/offers/6x_cognigen.webp</image:loc>
+      <image:title>Cognigen Plus 6 Bottle Package - Maximum Savings</image:title>
+      <image:caption>Natural brain health support supplement - 6 bottle package with best value</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://pillowpotion.com/offers/brain_scan.webp</image:loc>
+      <image:title>Brain Health Scan</image:title>
+      <image:caption>Brain health visualization showing cognitive function and mental clarity</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://pillowpotion.com/offers/pillowpotionlogo.webp</image:loc>
+      <image:title>Pillow Potion Logo</image:title>
+      <image:caption>Pillow Potion - Premium natural health supplements</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

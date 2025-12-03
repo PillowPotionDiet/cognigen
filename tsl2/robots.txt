@@ -1,0 +1,28 @@
+# robots.txt for Cognigen Plus - Pillow Potion
+
+User-agent: *
+Allow: /
+
+# Disallow admin and tracking scripts
+Disallow: /cgi-bin/
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Allow important resources
+Allow: /tsl2/
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://pillowpotion.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

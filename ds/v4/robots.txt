@@ -1,0 +1,55 @@
+# Robots.txt for Cognigen Plus - PillowPotion Naturals
+# Version: 1.1
+# Last Updated: 2025-11-20
+
+User-agent: *
+
+# Allow main landing page
+Allow: /
+Allow: /index.html
+
+# Allow assets and resources
+Allow: /assets/
+Allow: /assets1/
+Allow: /css/
+Allow: /js/
+Allow: /img/
+Allow: /images/
+Allow: /shared/
+Allow: /noti/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.webp$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.woff$
+Allow: /*.woff2$
+Allow: /*.ttf$
+
+# Disallow upsell/downsell pages from search engines (private sales funnel)
+Disallow: /upsell.html
+Disallow: /downsell.html
+Disallow: /m/
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /_/
+
+# Disallow duplicate content parameters
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+Disallow: /*?*sid=
+Disallow: /*?*session=
+Disallow: /*?*aff_id=
+Disallow: /*?*subid=
+
+# Crawl-delay (optional - adjust as needed)
+# Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://cognigenplus.pillowpotion.com/sitemap.xml

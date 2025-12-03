@@ -1,0 +1,46 @@
+.div{
+	max-width: 100% !important;
+}
+.div-82{
+	max-width: 82%;
+}
+.div-61{
+	max-width: 61%;
+}
+.div-71{
+	max-width: 71%;
+}
+
+.row-new{
+display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+.new-size{
+	font-size: 19px;
+}
+
+@media screen and (max-width: 992px){
+	.row-new{
+		max-width: 100%;
+	}
+	.new-size{
+	font-size: 11px;
+}
+	.div-82{
+	max-width: 40%;
+}
+.div-61{
+	max-width: 30%;
+}
+.div-71{
+	max-width: 35%;
+}
+
+}

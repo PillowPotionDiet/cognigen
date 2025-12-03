@@ -1,0 +1,35 @@
+# Robots.txt for Cognigen Plus
+# https://cognigenplus.pillowpotion.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow tracking and admin pages
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*add_to_cart*
+Disallow: /*?*aff_id*
+Disallow: /*?*subid*
+
+# Allow important resources
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /assets/
+
+# Sitemap location
+Sitemap: https://cognigenplus.pillowpotion.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

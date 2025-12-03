@@ -1,0 +1,29 @@
+HTTrack3.49-2+htsswf+htsjava launched on Thu, 25 Sep 2025 21:36:06 at https://getxitox.com/go/purchase4.php +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://getxitox.com/go/purchase4.php -O1 "C:\Users\SADAQAT ALI NESTER\Desktop\TSL3" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+21:36:22	Error: 	"Bad Request" (400) at link https://www.googletagmanager.com/gtm.js?id= (from https://getxitox.com/go/purchase4.php)
+21:36:25	Error: 	"Not Found" (404) at link https://cdn.truegcloud.com/Xitox/DTC/favicon.png (from https://getxitox.com/go/purchase4.php)
+21:36:30	Error: 	"Not Found" (404) at link https://cdn.truegcloud.com/Xitox/DTC/orderList-1.png (from https://getxitox.com/go/purchase4.php)
+21:36:30	Error: 	"Not Found" (404) at link https://cdn.truegcloud.com/Xitox/DTC/orderList-2.png (from https://getxitox.com/go/purchase4.php)
+21:36:30	Error: 	"Not Found" (404) at link https://cdn.truegcloud.com/Xitox/DTC/orderList-3.png (from https://getxitox.com/go/purchase4.php)
+21:36:30	Error: 	"Not Found" (404) at link https://cdn.truegcloud.com/Xitox/DTC/orderList-4.png (from https://getxitox.com/go/purchase4.php)
+21:36:30	Error: 	"Not Found" (404) at link https://getxitox.com/go/signals/config/ (from https://connect.facebook.net/en_US/fbevents.js)
+21:36:30	Error: 	"Not Found" (404) at link https://getxitox.com/go/a (from https://connect.facebook.net/en_US/fbevents.js)
+21:36:30	Error: 	"Not Found" (404) at link https://getxitox.com/go/signals/plugins/ (from https://connect.facebook.net/en_US/fbevents.js)
+21:36:30	Error: 	"Not Found" (404) at link https://getxitox.com/go/POST (from https://connect.facebook.net/en_US/fbevents.js)
+21:36:30	Error: 	"Not Found" (404) at link https://getxitox.com/go/schema.org/ (from https://connect.facebook.net/en_US/fbevents.js)
+21:36:30	Error: 	"Not Found" (404) at link https://getxitox.com/go/b.resolvedLink (from https://connect.facebook.net/en_US/fbevents.js)
+21:36:30	Error: 	"Not Found" (404) at link https://getxitox.com/go/d (from https://connect.facebook.net/en_US/fbevents.js)
+21:36:30	Error: 	"Not Found" (404) at link https://getxitox.com/signals/iwl.js (from https://connect.facebook.net/en_US/fbevents.js)
+21:36:30	Error: 	"Not Found" (404) at link https://getxitox.com/signals/iwl.js?pixel_id= (from https://connect.facebook.net/en_US/fbevents.js)
+21:36:30	Error: 	"Not Found" (404) at link https://getxitox.com/go/c.dl (from https://connect.facebook.net/en_US/fbevents.js)
+21:36:30	Error: 	"Not Found" (404) at link https://getxitox.com/go/c.rl (from https://connect.facebook.net/en_US/fbevents.js)
+21:36:30	Error: 	"Not Found" (404) at link https://cdn.truegcloud.com/levitox/DTC/ajax-loader.gif (from https://getxitox.com/css/DTC-slick-theme.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 24 seconds : 76 links scanned, 57 files written (6750668 bytes overall) [6055359 bytes received at 252306 bytes/sec], 989631 bytes transferred using HTTP compression in 30 files, ratio 24%, 8.4 requests per connection
+(18 errors, 0 warnings, 0 messages)
