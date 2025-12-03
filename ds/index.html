@@ -77,7 +77,7 @@
     <link rel="preload" as="image" href="https://pillowpotion.com/offers/4x_cognigen.webp" fetchpriority="high" />
 
     <!-- Preload Video & Controls -->
-    <link rel="preload" as="video" href="https://pillowpotion.com/offers/video/lead-4-final.mp4" />
+    <link rel="preload" as="video" href="./cognigen_assets/lead-4-final.mp4" />
     <link rel="preload" as="image" href="./cognigen_assets/sound-play-button.png" />
     <link rel="preload" as="image" href="./cognigen_assets/play-btn.svg" />
 
@@ -187,7 +187,7 @@
             loop
             autoplay
             muted
-            src="https://pillowpotion.com/offers/video/lead-4-final.mp4"
+            src="./cognigen_assets/lead-4-final.mp4"
             preload="auto"
           ></video>
 
@@ -451,9 +451,29 @@ Below While Stocks Last!</h1>
         videoLoader.style.display = "none";
       });
 
-      // Handle error case
-      video.addEventListener("error", () => {
-        videoLoader.innerHTML = "<p>Error loading video</p>";
+      // Handle error case with detailed logging
+      video.addEventListener("error", (e) => {
+        console.error("Video error:", video.error);
+        console.error("Error code:", video.error?.code);
+        console.error("Error message:", video.error?.message);
+        videoLoader.innerHTML = `<p style="color: white;">Error loading video<br>Error code: ${video.error?.code || 'unknown'}</p>`;
+      });
+
+      // Add more detailed loading events
+      video.addEventListener("loadstart", () => {
+        console.log("Video load started");
+      });
+
+      video.addEventListener("loadeddata", () => {
+        console.log("Video data loaded");
+      });
+
+      video.addEventListener("stalled", () => {
+        console.warn("Video loading stalled");
+      });
+
+      video.addEventListener("abort", () => {
+        console.error("Video loading aborted");
       });
 
       const loadingCountdown = document.getElementById("loadingCountdown");
