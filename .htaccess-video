@@ -1,0 +1,69 @@
+# .htaccess for Video Directory
+# Upload this file to: pillowpotion.com/offers/video/
+# Rename it to: .htaccess (remove the -video suffix)
+
+# Enable MIME Types for Video Files
+<IfModule mod_mime.c>
+    AddType video/mp4 .mp4
+    AddType video/webm .webm
+    AddType video/ogg .ogv
+    AddType video/avi .avi
+</IfModule>
+
+# Enable CORS (Cross-Origin Resource Sharing)
+<IfModule mod_headers.c>
+    # Allow access from any domain
+    Header set Access-Control-Allow-Origin "*"
+
+    # Allow GET and OPTIONS methods
+    Header set Access-Control-Allow-Methods "GET, OPTIONS"
+
+    # Allow specific headers
+    Header set Access-Control-Allow-Headers "Range, Content-Type, Accept-Encoding"
+
+    # Expose headers for range requests (important for video seeking)
+    Header set Access-Control-Expose-Headers "Content-Length, Content-Range, Accept-Ranges"
+
+    # Allow credentials
+    Header set Access-Control-Allow-Credentials "true"
+
+    # Set proper content type for video files
+    <FilesMatch "\.(mp4|webm|ogv|avi)$">
+        Header set Content-Type "video/mp4"
+        Header set Accept-Ranges "bytes"
+    </FilesMatch>
+</IfModule>
+
+# Enable Range Requests for Video Seeking
+<IfModule mod_headers.c>
+    Header set Accept-Ranges bytes
+</IfModule>
+
+# Cache Control for Video Files (optional but recommended)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType video/mp4 "access plus 1 month"
+    ExpiresByType video/webm "access plus 1 month"
+</IfModule>
+
+# Prevent hotlinking (optional - remove if you want to allow embedding)
+# <IfModule mod_rewrite.c>
+#     RewriteEngine on
+#     RewriteCond %{HTTP_REFERER} !^$
+#     RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?pillowpotion.com [NC]
+#     RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?cognigenplus.pillowpotion.com [NC]
+#     RewriteRule \.(mp4|webm)$ - [F]
+# </IfModule>
+
+# Increase file size limits if needed
+<IfModule mod_php.c>
+    php_value upload_max_filesize 200M
+    php_value post_max_size 200M
+    php_value max_execution_time 300
+    php_value max_input_time 300
+</IfModule>
+
+# Force download headers off (allow inline viewing)
+<FilesMatch "\.(mp4|webm|ogv)$">
+    Header unset Content-Disposition
+</FilesMatch>
