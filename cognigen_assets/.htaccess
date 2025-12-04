@@ -1,0 +1,22 @@
+# Video File Configuration
+# Allow access from anywhere
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+# Set correct MIME type for MP4 files
+<IfModule mod_mime.c>
+    AddType video/mp4 .mp4 mp4
+</IfModule>
+
+# Enable range requests for video seeking
+<IfModule mod_headers.c>
+    <FilesMatch "\.(mp4)$">
+        Header set Accept-Ranges bytes
+    </FilesMatch>
+</IfModule>
+
+# Allow everyone to access
+<FilesMatch "\.(mp4)$">
+    Require all granted
+</FilesMatch>
