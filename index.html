@@ -177,15 +177,6 @@
      <a href="#product-grid"><button class="cta">Ready to order</button></a>
         <h1>Elevate Your Focus with Cognigen Plus</h1>
         <div class="video-container">
-          <!-- Video Loading Indicator -->
-          <div id="videoLoader" class="video-loader">
-            <div class="loader-spinner"></div>
-            <p>Loading video...</p>
-            <div class="progress-bar-container">
-              <div class="progress-bar" id="progressBar"></div>
-            </div>
-            <p id="progressText">0%</p>
-          </div>
           <video
             id="mainVideo"
             loop
@@ -438,108 +429,14 @@ Below While Stocks Last!</h1>
 </div>
     
     <script>
-      // Video Preloader with Progress and Buffer Management
+      // Video controls
       const video = document.getElementById("mainVideo");
-      const videoLoader = document.getElementById("videoLoader");
-      const progressBar = document.getElementById("progressBar");
-      const progressText = document.getElementById("progressText");
-
-      // Show loader initially
-      videoLoader.style.display = "flex";
-
-      // Minimum buffer percentage required before allowing playback (15%)
-      const MIN_BUFFER_PERCENT = 15;
-      let isBufferReady = false;
-      let canHideLoader = false;
-
-      // Track loading progress
-      video.addEventListener("progress", () => {
-        if (video.buffered.length > 0) {
-          const bufferedEnd = video.buffered.end(video.buffered.length - 1);
-          const duration = video.duration;
-          if (duration > 0) {
-            const percentLoaded = (bufferedEnd / duration) * 100;
-            progressBar.style.width = percentLoaded + "%";
-            progressText.textContent = Math.round(percentLoaded) + "%";
-
-            // Check if we have enough buffer for smooth playback
-            if (percentLoaded >= MIN_BUFFER_PERCENT && !isBufferReady) {
-              isBufferReady = true;
-              console.log(`Buffer ready: ${Math.round(percentLoaded)}% loaded`);
-            }
-          }
-        }
-      });
-
-      // Wait for sufficient buffer before hiding loader
-      video.addEventListener("canplay", () => {
-        if (video.buffered.length > 0) {
-          const bufferedEnd = video.buffered.end(video.buffered.length - 1);
-          const duration = video.duration;
-          if (duration > 0) {
-            const percentLoaded = (bufferedEnd / duration) * 100;
-            if (percentLoaded >= MIN_BUFFER_PERCENT) {
-              canHideLoader = true;
-            }
-          }
-        }
-      });
-
-      // Hide loader when video has enough buffer and can play through
-      video.addEventListener("canplaythrough", () => {
-        if (isBufferReady || canHideLoader) {
-          videoLoader.style.display = "none";
-        }
-      });
-
-      // Also hide if video starts playing with sufficient buffer
-      video.addEventListener("playing", () => {
-        if (isBufferReady || canHideLoader) {
-          videoLoader.style.display = "none";
-        }
-      });
-
-      // Monitor buffer during playback to prevent stuttering
-      video.addEventListener("waiting", () => {
-        console.log("Video buffering...");
-        videoLoader.style.display = "flex";
-        progressText.textContent = "Buffering...";
-      });
-
-      // Resume when buffer is ready
-      video.addEventListener("canplay", () => {
-        if (video.currentTime > 0 && !video.paused) {
-          videoLoader.style.display = "none";
-        }
-      });
 
       // Handle error case with detailed logging
       video.addEventListener("error", (e) => {
         console.error("Video error:", video.error);
         console.error("Error code:", video.error?.code);
         console.error("Error message:", video.error?.message);
-        videoLoader.innerHTML = `<p style="color: white;">Error loading video<br>Error code: ${video.error?.code || 'unknown'}</p>`;
-      });
-
-      // Add more detailed loading events
-      video.addEventListener("loadstart", () => {
-        console.log("Video load started");
-      });
-
-      video.addEventListener("loadeddata", () => {
-        console.log("Video data loaded");
-      });
-
-      video.addEventListener("loadedmetadata", () => {
-        console.log("Video metadata loaded - Duration:", video.duration);
-      });
-
-      video.addEventListener("stalled", () => {
-        console.warn("Video loading stalled");
-      });
-
-      video.addEventListener("abort", () => {
-        console.error("Video loading aborted");
       });
 
       const loadingCountdown = document.getElementById("loadingCountdown");
