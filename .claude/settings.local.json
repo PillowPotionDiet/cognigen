@@ -14,7 +14,10 @@
       "Bash(git restore:*)",
       "Bash(git lfs:*)",
       "Bash(git ls-tree:*)",
-      "Bash(git hash-object:*)"
+      "Bash(git hash-object:*)",
+      "Bash(git rm:*)",
+      "Bash(ffmpeg:*)",
+      "Bash(where:*)"
     ],
     "deny": [],
     "ask": []
